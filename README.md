@@ -4,7 +4,7 @@
 
 - Bytecode obfuscation
 - Lua opcodes swapping
-- Removes intructions from rerubi that are not used
+- Removes instructions from rerubi that are not used
 - Attempts to break decompilers by adding junk string constants
 - A basic attempt of obfuscating numbers, booleans & strings
 - Multi-threaded
