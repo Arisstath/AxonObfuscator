@@ -12,4 +12,4 @@
 
 #Licence:
 
-- You are allowed to use it for commercial purposes, but YOU MUST PROVIDE CEDITS TO Vxck AND Arisstath.
+- You are allowed to use it for commercial purposes, but YOU MUST PROVIDE CREDITS TO Vxck AND Arisstath.
