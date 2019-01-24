@@ -1,1 +1,4 @@
-print'hello from axon'
+local a = 2+2
+
+local xd = true
+print("xd" .. a .. " and " .. tostring(xd))

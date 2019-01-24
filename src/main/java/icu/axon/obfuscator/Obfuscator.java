@@ -9,6 +9,7 @@ import org.luaj.vm2.Prototype;
 import org.luaj.vm2.compiler.AxonDumpState;
 import org.luaj.vm2.compiler.AxonLuaCompiler;
 import org.luaj.vm2.compiler.DumpState;
+import org.luaj.vm2.compiler.LuaC;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -19,6 +20,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static spark.Spark.*;
 
 public class Obfuscator {
+
 
 
     private static String processScript(InputStream script, OutputStream out, CompilerOptions opts) throws Exception {
@@ -45,6 +47,7 @@ public class Obfuscator {
     private static String minify(String target) throws UnirestException {
         return Unirest.post("http://173.249.40.69:3000/minify").body(target).asString().getBody();
     }
+
 
     private static String obfuscate(String input, boolean minify) throws Exception {
 
@@ -83,7 +86,7 @@ public class Obfuscator {
         for(byte c : outputStream.toByteArray()) {
             obf++;
             int b = c & 0xff;
-            if(obf == 80) {
+            if(obf == 5) {
                 if (random.nextBoolean()) {
                     if (random.nextBoolean()) {
                         //Xor the byte by a random number
@@ -136,7 +139,9 @@ public class Obfuscator {
         String s= new String(Files.readAllBytes(Paths.get("axon.in")));
         PrintWriter writer = new PrintWriter("axon.out");
 
-        String source = obfuscate(s, true);
+
+
+        String source = obfuscate(s, false);
 
 
         writer.println(source);
